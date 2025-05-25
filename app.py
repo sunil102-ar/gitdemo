@@ -17,6 +17,9 @@ async def clean_data(request: Request):
 
     return df.to_dict(orient="records")
 
+if __name__ == "__main__":
+    uvicorn.run(app, host="0.0.0.0", port=8000)
+    
 @app.get("/")
 def read_root():
     return {"message": "Dataset Cleaner API is running 🚀"}
