@@ -16,3 +16,7 @@ async def clean_data(request: Request):
     df.columns = [col.strip().lower() for col in df.columns]
 
     return df.to_dict(orient="records")
+
+@app.get("/")
+def read_root():
+    return {"message": "Dataset Cleaner API is running 🚀"}
